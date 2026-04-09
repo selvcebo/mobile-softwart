@@ -7,7 +7,7 @@ import '../models/pago_model.dart';
 class PagosDatasource {
   Future<List<PagoModel>> getPagos() async {
     final token = await TokenStorage.getToken();
-    final uri = Uri.parse('${ApiConstants.baseUrl}${ApiConstants.pagos}?limit=500');
+    final uri = Uri.parse('${ApiConstants.baseUrl}${ApiConstants.payments}?limit=500');
     final res = await http.get(uri, headers: {
       'Authorization': 'Bearer $token',
       'Content-Type': 'application/json',
@@ -20,7 +20,7 @@ class PagosDatasource {
 
   Future<bool> cambiarEstadoPago(int idPago, int idEstadoPago) async {
     final token = await TokenStorage.getToken();
-    final uri = Uri.parse('${ApiConstants.baseUrl}${ApiConstants.pagos}/$idPago');
+    final uri = Uri.parse('${ApiConstants.baseUrl}${ApiConstants.payments}/$idPago');
     final res = await http.put(
       uri,
       headers: {

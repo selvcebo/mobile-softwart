@@ -8,7 +8,7 @@ class CitasDatasource {
   Future<List<CitaModel>> getCitas(String token) async {
     try {
       final response = await http.get(
-        Uri.parse('${ApiConstants.baseUrl}${ApiConstants.citas}?limit=500'),
+        Uri.parse('${ApiConstants.baseUrl}${ApiConstants.appointments}?limit=500'),
         headers: {
           'Content-Type': 'application/json',
           'Authorization': 'Bearer $token',
@@ -42,7 +42,7 @@ class CitasDatasource {
     try {
       final response = await http.patch(
             Uri.parse(
-              '${ApiConstants.baseUrl}${ApiConstants.cambiarEstadoCita(idCita)}',
+              '${ApiConstants.baseUrl}${ApiConstants.changeAppointmentStatus(idCita)}',
             ),
              
             headers: {

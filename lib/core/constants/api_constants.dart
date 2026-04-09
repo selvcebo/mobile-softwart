@@ -12,22 +12,23 @@ class ApiConstants {
   // Dashboard
   static const String dashboard = '/dashboard';
 
-  // Citas
-  static const String citas = '/citas';
-  static String cambiarEstadoCita(int id) => '/estado-cita/cita/$id/estado';
+  // Appointments
+  static const String appointments = '/appointments';
+  static String changeAppointmentStatus(int id) =>
+      '/appointment-status/cita/$id/estado';
 
-  // Pedidos (detalle-venta)
-  static const String pedidos = '/detalle-venta';
-  static String cambiarEstadoPedido(int id) =>
-      '/estado-servicio/detalle/$id/estado';
+  // Sale Details (services/orders)
+  static const String saleDetails = '/sale-details';
+  static String changeSaleDetailStatus(int id) =>
+      '/service-status/detalle/$id/estado';
 
-  // Ventas
-  static const String ventas = '/ventas';
-  static String estadoPagosVenta(int id) => '/ventas/$id/estado-pagos';
+  // Sales
+  static const String sales = '/sales';
+  static String paymentPlan(int id) => '/sales/$id/payment-plan';
 
-  // Clientes
-  static const String clientes = '/clientes';
+  // Clients
+  static const String clients = '/clients';
 
-  // Pagos
-  static const String pagos = '/pagos';
+  // Payments
+  static const String payments = '/payments';
 }

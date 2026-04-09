@@ -134,9 +134,8 @@ class _SplashState extends State<_Splash> {
   }
 
   Future<void> _checkAuth() async {
-    // Warmup ping: despierta el servidor de Render en paralelo con el chequeo local
-    http.get(Uri.parse('${ApiConstants.baseUrl}${ApiConstants.dashboard}'))
-        .ignore();
+    // Warmup ping: despierta el servidor de Render (endpoint público, sin auth)
+    http.get(Uri.parse('${ApiConstants.baseUrl}/services')).ignore();
 
     final hasToken = await TokenStorage.hasValidToken();
 

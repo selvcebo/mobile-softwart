@@ -8,7 +8,7 @@ class ClientesDatasource {
   Future<List<ClienteModel>> getClientes(String token) async {
     try {
       final response = await http.get(
-        Uri.parse('${ApiConstants.baseUrl}${ApiConstants.clientes}?limit=500'),
+        Uri.parse('${ApiConstants.baseUrl}${ApiConstants.clients}?limit=500'),
         headers: {
           'Content-Type': 'application/json',
           'Authorization': 'Bearer $token',
