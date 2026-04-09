@@ -8,7 +8,7 @@ class PedidosDatasource {
   Future<List<PedidoModel>> getPedidos(String token) async {
     try {
       final response = await http.get(
-        Uri.parse('${ApiConstants.baseUrl}${ApiConstants.pedidos}?limit=500'),
+        Uri.parse('${ApiConstants.baseUrl}${ApiConstants.saleDetails}?limit=500'),
         headers: {
           'Content-Type': 'application/json',
           'Authorization': 'Bearer $token',
@@ -44,7 +44,7 @@ class PedidosDatasource {
     try {
       final response = await http.patch(
         Uri.parse(
-          '${ApiConstants.baseUrl}${ApiConstants.cambiarEstadoPedido(idDetalle)}',
+          '${ApiConstants.baseUrl}${ApiConstants.changeSaleDetailStatus(idDetalle)}',
         ),
         headers: {
           'Content-Type': 'application/json',

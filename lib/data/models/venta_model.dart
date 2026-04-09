@@ -12,11 +12,11 @@ class VentaModel extends Venta {
   });
 
   factory VentaModel.fromJson(Map<String, dynamic> json) {
-    // El backend retorna cliente como objeto anidado: { id_cliente, nombre, correo, ... }
-    final clienteMap = json['cliente'];
-    final nombreCliente = clienteMap is Map<String, dynamic>
-        ? clienteMap['nombre'] as String?
-        : clienteMap as String?; // fallback por si viniera plano
+    // Backend retorna client como objeto anidado: { id_cliente, nombre, correo, ... }
+    final clientMap = json['client'];
+    final nombreCliente = clientMap is Map<String, dynamic>
+        ? clientMap['nombre'] as String?
+        : clientMap as String?;
 
     // total viene como string decimal desde PostgreSQL (ej: "150000.00")
     final totalRaw = json['total'];

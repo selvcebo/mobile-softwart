@@ -12,27 +12,18 @@ class PedidoModel extends Pedido {
   });
 
   factory PedidoModel.fromJson(Map<String, dynamic> json) {
-    // El backend retorna relaciones anidadas:
-    // venta{id_venta,...}, servicio{nombre,descripcion}, estadoServicio{id_estado,nombre}
-    final venta = json['venta'] as Map<String, dynamic>?;
-    final servicio = json['servicio'] as Map<String, dynamic>?;
-    final estadoServicio = json['estadoServicio'] as Map<String, dynamic>?;
+    // Backend retorna relaciones en inglés: sale, service, serviceStatus
+    final sale = json['sale'] as Map<String, dynamic>?;
+    final service = json['service'] as Map<String, dynamic>?;
+    final serviceStatus = json['serviceStatus'] as Map<String, dynamic>?;
 
     return PedidoModel(
       idDetalle: json['id_detalle'] as int,
-      idVenta: venta?['id_venta'] as int? ?? json['id_venta'] as int? ?? 0,
-      nombreServicio: servicio?['nombre'] as String? ??
-          json['nombre_servicio'] as String?,
-      descripcion: servicio?['descripcion'] as String? ??
-          json['descripcion'] as String?,
-      idEstado: estadoServicio?['id_estado'] as int? ??
-          json['id_estado'] as int? ??
-          1,
-      estado: estadoServicio?['nombre'] as String? ??
-          json['estado'] as String? ??
-          json['nombre_estado'] as String? ??
-          '',
-      // precio viene como string decimal desde PostgreSQL
+      idVenta: sale?['id_venta'] as int? ?? json['id_venta'] as int? ?? 0,
+      nombreServicio: service?['nombre'] as String?,
+      descripcion: service?['descripcion'] as String?,
+      idEstado: serviceStatus?['id_estado'] as int? ?? 1,
+      estado: serviceStatus?['nombre'] as String? ?? '',
       precio: double.tryParse(json['precio']?.toString() ?? '0') ?? 0.0,
     );
   }

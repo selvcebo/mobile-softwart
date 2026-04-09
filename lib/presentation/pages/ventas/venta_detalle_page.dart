@@ -103,8 +103,8 @@ class _VentaDetallePageState extends State<VentaDetallePage> {
                       final abono = entry.value as Map<String, dynamic>;
                       final pagado = index < pagosRealizados;
                       final monto =
-                          (abono['montoEsperado'] as num?)?.toDouble() ?? 0;
-                      final numero = abono['numero'] as int? ?? (index + 1);
+                          (abono['amount'] as num?)?.toDouble() ?? 0;
+                      final numero = abono['number'] as int? ?? (index + 1);
                       return Card(
                         child: ListTile(
                           leading: Icon(

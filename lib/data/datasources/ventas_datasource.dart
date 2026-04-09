@@ -8,7 +8,7 @@ class VentasDatasource {
   Future<List<VentaModel>> getVentas(String token) async {
     try {
       final response = await http.get(
-        Uri.parse('${ApiConstants.baseUrl}${ApiConstants.ventas}?limit=500'),
+        Uri.parse('${ApiConstants.baseUrl}${ApiConstants.sales}?limit=500'),
         headers: {
           'Content-Type': 'application/json',
           'Authorization': 'Bearer $token',
@@ -43,7 +43,7 @@ class VentasDatasource {
     try {
       final response = await http.get(
         Uri.parse(
-          '${ApiConstants.baseUrl}${ApiConstants.estadoPagosVenta(idVenta)}',
+          '${ApiConstants.baseUrl}${ApiConstants.paymentPlan(idVenta)}',
         ),
         headers: {
           'Content-Type': 'application/json',

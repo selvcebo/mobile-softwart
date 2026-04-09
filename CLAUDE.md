@@ -182,15 +182,15 @@ static const String baseUrl = 'https://softwart-backend.onrender.com/api'; // Pr
 ```
 POST  /api/auth/login
 GET   /api/dashboard
-GET   /api/citas?limit=500
-PATCH /api/estado-cita/cita/:id/estado          body: { id_estado_cita }
-GET   /api/detalle-venta?limit=500
-PATCH /api/estado-servicio/detalle/:id/estado   body: { id_estado }
-GET   /api/ventas?limit=500
-GET   /api/ventas/:id/estado-pagos
-GET   /api/clientes?limit=500
-GET   /api/pagos?limit=500
-PUT   /api/pagos/:id                            body: { id_estado_pago }
+GET   /api/appointments?limit=500
+PATCH /api/appointment-status/cita/:id/estado   body: { id_estado_cita }
+GET   /api/sale-details?limit=500
+PATCH /api/service-status/detalle/:id/estado    body: { id_estado }
+GET   /api/sales?limit=500
+GET   /api/sales/:id/payment-plan
+GET   /api/clients?limit=500
+GET   /api/payments?limit=500
+PUT   /api/payments/:id                         body: { id_estado_pago }
 ```
 
 ---
