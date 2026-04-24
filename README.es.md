@@ -119,3 +119,9 @@ La URL de producción está configurada en `core/constants/api_constants.dart`. 
 
 Proyecto de grado — Tecnología en Análisis y Desarrollo de Software, SENA (Medellín, Colombia).
 Desarrollado por **Sergio E. León V.**
+
+---
+
+## Herramientas de desarrollo
+
+Desarrollado con AI-assisted development usando [Claude](https://claude.ai) y [Claude Code](https://claude.ai/code) de Anthropic.
